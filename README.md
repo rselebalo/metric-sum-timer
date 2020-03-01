@@ -20,7 +20,9 @@ Get
  - sample response: { "value": 21 }
 
 
-  Countdown-timer
+
+
+  COUNTDOWN-TIMER
 Built with react hooks
 
 Steps to run this project: 
