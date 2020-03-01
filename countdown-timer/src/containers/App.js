@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import BeepSound from '../assets/audio/beep.mp3';
-import CountdownTimer from '../components/Clock/clock';
-import CountInput from '../components/ClockInput/clockInput';
-import AdjustClockSpeed from '../components/ClockSpeedAdjuster/clockSpeedAdjuster';
-import PauseResumeClock from '../components/ClockPauseResume/clockPauseResume';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import BeepSound from "../assets/audio/beep.mp3";
+import CountdownTimer from "../components/Clock/clock";
+import CountInput from "../components/ClockInput/clockInput";
+import AdjustClockSpeed from "../components/ClockSpeedAdjuster/clockSpeedAdjuster";
+import PauseResumeClock from "../components/ClockPauseResume/clockPauseResume";
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -66,7 +66,11 @@ const App = () => {
           />
         </div>
       )}
-
+      {!running && (
+        <div className="holder">
+          <h1>00:00</h1>
+        </div>
+      )}
       <AdjustClockSpeed
         speed={speed}
         running={running}
