@@ -1,0 +1,27 @@
+# NOTE: update this with your service name
+service: sum-metric-api
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+package:
+  individually: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  getSum:
+    handler: src/functions/getSum.handler
+    events:
+      - http:
+          path: metric
+          method: get
+  postValue:
+    handler: src/functions/postValues.handler
+    events:
+      - http:
+          path: metric
+          method: post
